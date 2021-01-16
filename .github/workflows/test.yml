@@ -4,8 +4,7 @@ on:
   workflow_dispatch:
   watch:
     types: started
-  schedule:
-    - cron: '* * * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest       
