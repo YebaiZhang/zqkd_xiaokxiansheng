@@ -504,6 +504,7 @@ function readTime() {
             'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_7 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'
             },
             body: timebodyVal,
+			timeout: 60000,
          }
         $.post(url, (error, response, data) => {
             let timeres = JSON.parse(data)
@@ -533,6 +534,7 @@ function rotary() {
                 url: `${YOUTH_HOST}RotaryTable/turnRotary?_=${time}`,
                 headers: signheaderVal,
                 body: rotarbody
+				timeout: 60000,
             }
             $.post(url,async (error, response, data) => {
                 rotaryres = JSON.parse(data)
@@ -577,7 +579,8 @@ function runRotary(index) {
         const url = {
             url: `${YOUTH_HOST}RotaryTable/chestReward?_=${time}`,
             headers: signheaderVal,
-            body: rotarbody
+            body: rotarbody,
+			timeout: 60000,
         }
         $.post(url, (error, response, data) => {
         const rotaryresp = JSON.parse(data);
