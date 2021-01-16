@@ -23,7 +23,7 @@ jobs:
           npm install cron
           npm install request
           curl ipinfo.io/json
-      - name: '运行 【测试】'
+      - name: '运行 【测试   】'
         run: |
           cd ~/js   
          
