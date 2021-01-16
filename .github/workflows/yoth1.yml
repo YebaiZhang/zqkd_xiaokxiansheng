@@ -1,4 +1,4 @@
-name: 中青看点
+name: 中青看点1
 
 on:
   workflow_dispatch:
