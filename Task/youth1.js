@@ -533,7 +533,7 @@ function rotary() {
             const url = {
                 url: `${YOUTH_HOST}RotaryTable/turnRotary?_=${time}`,
                 headers: signheaderVal,
-                body: rotarbody
+                body: rotarbody,
 				timeout: 60000,
             }
             $.post(url,async (error, response, data) => {
