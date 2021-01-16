@@ -61,6 +61,7 @@ let cookiesArr = [], signheaderVal = '',
     detail = ``, subTitle = ``;
 let CookieYouth = [], ARTBODYs = [],
     REDBODYs  = [], READTIME = [];
+	/*
 if ($.isNode()) {
   if (process.env.YOUTH_HEADER && process.env.YOUTH_HEADER.indexOf('#') > -1) {
   CookieYouth = process.env.YOUTH_HEADER.split('#');
@@ -117,7 +118,7 @@ if ($.isNode()) {
     readArr.push($.getdata('read_zq'));
     timeArr.push($.getdata('readtime_zq'));
 }
-
+*/
 const firstcheck = $.getdata('signt');
 const runtimes = $.getdata('times');
 const opboxtime = $.getdata('opbox');
