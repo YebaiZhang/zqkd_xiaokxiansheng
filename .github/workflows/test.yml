@@ -1,11 +1,11 @@
-name: 机场签到
+name: 测试脚本
 
 on:
   workflow_dispatch:
   watch:
     types: started
   schedule:
-    - cron: '0 21 * * *'
+    - cron: '2 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest       
@@ -24,7 +24,7 @@ jobs:
           npm install cron
           npm install request
           curl ipinfo.io/json
-      - name: '运行 【机场签到】'
+      - name: '运行 【测试】'
         run: |
           cd ~/js   
-          node Task/checkin.js
+         
