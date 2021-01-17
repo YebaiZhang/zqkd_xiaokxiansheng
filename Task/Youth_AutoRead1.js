@@ -51,7 +51,7 @@ console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date
       $.index = $.index + 1;
       console.log(`-------------------------\n\n开始中青看点第${$.index}次阅读`)
     }
-    //await AutoRead();
+    await AutoRead();
   }
   $.msg('', '', `中青看点共完成${$.index}次阅读\n共计获得${readscore}个青豆，阅读请求全部结束`)
 })()
