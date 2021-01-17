@@ -72,7 +72,7 @@ function AutoRead() {
     $.post(url, async (error, response, data) => {
       $.begin=$.begin+1;
       let res=$.begin%ReadArr.length;
-	  console.log(JSON.parse(data).message);
+	  //console.log(JSON.parse(data).message);
       $.setdata(res+"", 'zqgetbody_body_index');
       let readres = JSON.parse(data);
       if (readres.error_code == '0' && typeof readres.items.read_score === 'number') {
