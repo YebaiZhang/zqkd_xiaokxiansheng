@@ -12,10 +12,10 @@ jobs:
       - name: Checkout
         run: |
           git clone https://github.com/xiaokxiansheng/js.git ~/js
-      - name: Use Node.js 14.5.3
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 14.5.3
+          node-version: 14.x
       - name: npm install
         run: |
           cd ~/js
