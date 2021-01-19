@@ -1,5 +1,4 @@
 name: 机场签到
-
 on:
   workflow_dispatch:
   watch:
