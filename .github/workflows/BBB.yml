@@ -1,10 +1,10 @@
-name: 步步宝
+name: 中青阅读3
 
 on:
   workflow_dispatch:
   watch:
     types: started
-    schedule:
+  schedule:
     - cron: '0 21 * * *'
 jobs:
   build:
@@ -23,7 +23,7 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【步步宝】'
+      - name: '运行 【中青阅读3】'
         run: |
           cd ~/js   
           node Task/BBB.js
