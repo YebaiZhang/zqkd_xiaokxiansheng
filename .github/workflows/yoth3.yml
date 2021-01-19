@@ -1,4 +1,4 @@
-name: 中青看点1
+name: 中青看点3
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【中青看点1】'
+      - name: '运行 【中青看点3】'
         run: |
           cd ~/js   
           node Task/youth3.js
