@@ -1,4 +1,4 @@
-name: 中青阅读3
+name: 步步宝
 
 on:
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【中青阅读3】'
+      - name: '运行 【步步宝】'
         run: |
           cd ~/js   
           node Task/BBB.js
