@@ -23,7 +23,7 @@ jobs:
           npm install
           npm install cron
           npm install request
-      - name: '运行 【步步宝】'
+      - name: '运行 【惠头条】'
         run: |
           cd ~/js   
           node Task/huitoutiao.js
