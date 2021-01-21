@@ -41,7 +41,7 @@ function GetCookie() {
 		  $.msg(jsname, `获取url: 成功🎉`, ``);
 		  $.msg(jsname, `获取header: 成功🎉`, ``);
 		  $.msg(jsname, `获取body: 成功🎉`, ``);
-		  //$.log( jsname+"获取更新body: 成功,url:"+url);
+		  $.log(jsname+"获取更新body: 成功,url:"+url);
 	          //$.log(jsname+"获取时长url: 成功,headers:"+headers");
 		 // $.log(jsname+"获取更新body: 成功,body:"+body);
 	}
