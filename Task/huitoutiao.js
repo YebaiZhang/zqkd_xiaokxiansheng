@@ -37,6 +37,7 @@ async function all() {
 		await runyouthread1();	
 		//await $.log('开始看视频');
 		await runwatch1()
+	}
 }  
   
 function GetCookie() {
