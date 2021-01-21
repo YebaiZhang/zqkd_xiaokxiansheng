@@ -38,10 +38,8 @@ function GetCookie() {
 		  const url = $request.url;
 		  const headers = JSON.stringify($request.headers);
 		  const body = $request.body;
-		  $.log($request.url);
-		  $.msg(jsname, `获取url: 成功🎉`, ``);
-		  $.msg(jsname, `获取header: 成功🎉`, ``);
-		  $.msg(jsname, `获取body: 成功🎉`, ``);
+		  $.msg(jsname, `获取cookie: 成功🎉`, ``);
+		  $.log($request); 
 		 // $.log(jsname+"获取更新body: 成功,url:"+url);
 	          //$.log(jsname+"获取时长url: 成功,headers:"+headers");
 		 // $.log(jsname+"获取更新body: 成功,body:"+body);
