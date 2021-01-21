@@ -32,7 +32,7 @@ if ((isGetCookie = typeof $request !== "undefined")) {
  
 async function all() {	
 	
-	for (let i = 0; i < 80; i++) {
+	for (let i = 0; i < 50; i++) {
 	    //await $.log('开始看新闻');
 		await runyouthread1();	
 		//await $.log('开始看视频');
