@@ -38,12 +38,12 @@ function GetCookie() {
 		  const url = $request.url;
 		  const headers = JSON.stringify($request.headers);
 		  const body = $request.body;
-		  $.msg(jsname + $.idx, `获取url: 成功🎉`, ``);
-		  $.msg(jsname + $.idx, `获取header: 成功🎉`, ``);
-		  $.msg(jsname + $.idx, `获取body: 成功🎉`, ``);
-		  $.log( "[${jsname + $.idx}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}");
-	      $.log("[${jsname + $.idx}] 获取时长url: 成功,qqreadtimeurlVal: ${qqreadtimeurlVal}");
-		  $.log("[${jsname + $.idx}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}");
+		  $.msg(jsname, `获取url: 成功🎉`, ``);
+		  $.msg(jsname, `获取header: 成功🎉`, ``);
+		  $.msg(jsname, `获取body: 成功🎉`, ``);
+		  $.log( "${jsname} 获取更新body: 成功,qqreadbodyVal: ${url}");
+	      $.log("${jsname} 获取时长url: 成功,qqreadtimeurlVal: ${headers}");
+		  $.log("${jsname} 获取更新body: 成功,qqreadbodyVal: ${body}");
 	}
 }
   
