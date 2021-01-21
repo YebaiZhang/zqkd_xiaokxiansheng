@@ -32,7 +32,7 @@ if ((isGetCookie = typeof $request !== "undefined")) {
  
 async function all() {	
 	
-	for (let i = 0; i < 50; i++) {
+	for (let i = 0; i < 80; i++) {
 	    //await $.log('开始看新闻');
 		await runyouthread1();	
 		//await $.log('开始看视频');
@@ -85,14 +85,20 @@ function GetCookie() {
 				//if(JSON.parse(data).incCredit>2)
 				//await runyouthread1();	
 			}
-			else
+			if (JSON.parse(data).state==10)
 			{
 				
 				$.log(JSON.parse(data).msg);
 				await $.wait(30000);	
 				//await runyouthread1();	
 			}
-			
+			else
+			{
+				
+				$.log(JSON.parse(data).msg);
+				//await $.wait(30000);	
+				//await runwatch1();	
+			}
 			
       } catch(e) {
 			$.log(e)
@@ -131,11 +137,18 @@ function GetCookie() {
 				//if(JSON.parse(data).incCredit>2)
 				//await runwatch1();	
 			}
-			else
+			if (JSON.parse(data).state==10)
 			{
 				
 				$.log(JSON.parse(data).msg);
 				await $.wait(30000);	
+				//await runyouthread1();	
+			}
+			else
+			{
+				
+				$.log(JSON.parse(data).msg);
+				//await $.wait(30000);	
 				//await runwatch1();	
 			}
 			
