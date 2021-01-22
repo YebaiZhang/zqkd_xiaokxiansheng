@@ -158,7 +158,7 @@ $.post(request, async(error, request, data) =>{
 			if (Jsondata.ret == "ok")
 		 	 $.log(" 【收益成功】: 获得收益: +"+Jsondata.profit);
 			else if (Jsondata.ret == "fail")
-		 	 $.log(" 【收益失败】: "+Jsondata);	
+		 	 $.log(" 【收益失败】: "+data);	
 			else
 			 $.log(data);	
 						 
