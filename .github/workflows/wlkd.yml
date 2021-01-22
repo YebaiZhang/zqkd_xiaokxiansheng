@@ -1,0 +1,30 @@
+name: 文旅看点
+
+on:
+  workflow_dispatch:
+  watch:
+    types: started
+  schedule:
+    - cron: '0 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest       
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/xiaokxiansheng/js.git ~/js
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: npm install
+        run: |
+          cd ~/js
+          npm install
+          npm install cron
+          npm install request
+          curl ipinfo.io/json
+      - name: '运行 【文旅看点】'
+        run: |
+          cd ~/js   
+          node Task/wlkd.js
