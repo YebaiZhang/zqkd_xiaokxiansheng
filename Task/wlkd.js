@@ -1,7 +1,6 @@
 
 const $ = new Env('文旅看点')
-//Cookie={"Cookie": "JSESSIONID=E8278090F218FC43FF77AE5D3A628571; CNZZDATA1279070688=1471101462-1611226426-%7C1611320199; CNZZDATA1279070682=539289172-1611233337-%7C1611233337; UM_distinctid=17724945353cc6-04aad8e66cd4fe8-754c1451-4a574-177249453541089"}
-//Cookie={"Cookie": "JSESSIONID=E8278090F218FC43FF77AE5D3A628571;"}
+
 let Cookie = $.getdata('vlkd_ck')
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
@@ -25,10 +24,6 @@ if(Cookie)$.setdata(Cookie,'vlkd_ck')
 
 
 
-
-
-
-
 !(async () => {
 	  await all(); 
 })()
@@ -42,7 +37,9 @@ if(Cookie)$.setdata(Cookie,'vlkd_ck')
 async function all() {		
 
 for (let i = 0; i < 150; i++) {
+		
 	   await GetArtlist();
+	    
 	}
 	
 	
@@ -53,25 +50,16 @@ function GetArtlist() {
   return new Promise((resolve, reject) => {
   const url = "http://app.zhongchuanjukan.com/jkd/newmobile/artlist.action";
   const body=	'jsondata={"appid":"xzwl","connectionType":"100","optaction":"up","operatorType":"2","channel":"iOS","appversioncode":"102","articlevideo":"0","time":"1611322700","cateid":"3","openid":"12f498e6382246848a07689acf06506b","os":"iOS","idfa":"00000000-0000-0000-0000-000000000000","apptoken":"xzwltoken070704","appversion":"1.0.2","page":2}';
-  const headers = {
-    "Cookie": "JSESSIONID=E8278090F218FC43FF77AE5D3A628571; CNZZDATA1279070688=1471101462-1611226426-%7C1611320199; CNZZDATA1279070682=539289172-1611233337-%7C1611233337; UM_distinctid=17724945353cc6-04aad8e66cd4fe8-754c1451-4a574-177249453541089",
-    //"Accept": "*/*",
-    //"Connection": "close",
-    //"Content-Type": "application/x-www-form-urlencoded",
-    //"Accept-Encoding": "gzip, deflate",
-    //"Host": "app.zhongchuanjukan.com",
-    //"User-Agent": "wen lu kan dian/1.0.2 (iPhone; iOS 14.3; Scale/3.00)",
-    //"Content-Length": "693",
-    //"Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7"
-};
+
   const request = {
       url: url,
-      headers: Cookie,
+      headers: JSON.parse(Cookie),
       body: body
   };
 
 $.post(request, async(error, request, data) =>{
       try {
+		  
 			let Jsondata = JSON.parse(data)
 			if (Jsondata.ret == "ok"){
 		 	
@@ -79,6 +67,7 @@ $.post(request, async(error, request, data) =>{
 				    //$.log(artlist.item_type)
 				   if(artlist.item_type=="article")
 				   {
+					   $.log(" 【666】");
 						let artTitle = artlist.art_title;
 						artid =artlist.art_id;
                         $.log(" 【阅读文章】: "+artTitle);
@@ -89,6 +78,7 @@ $.post(request, async(error, request, data) =>{
 				   }
 				    if(artlist.item_type=="video")
 				   {
+					   $.log(" 【777】");
 						let artTitle = artlist.art_title;
 						artid =artlist.art_id;
                         $.log(" 【观看视频】: "+artTitle);
@@ -114,18 +104,10 @@ $.post(request, async(error, request, data) =>{
 function Readarticle(notice) {
   return new Promise((resolve, reject) => {
   const url = `http://wlapp.ccdy.cn/jkd/weixin20/station/stationarticle.action?articleid=${artid}&openID=12f498e6382246848a07689acf06506b&ce=iOS&request_id=1611322700504870&scene_type=art_recommend_iOS&articlevideo=0&version=1.0.2&account_type=1&channel=iOS&shade=1&a=UJ-shFkMM9q-ifyjyWhPpA==&font_size=1&scene_type=&request_id=1611322700504870`;
-  //$.log(artid);
-  //$.log(url);
+
   const body = "";
   const headers = {
-   // "Accept-Encoding": "gzip, deflate",
-   // "Cookie": "xz_jkd_appkey=12f498e6382246848a07689acf06506b!iOS!1.0.2",
-   // "Connection": "close",
-   // "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-   // "Host": "wlapp.ccdy.cn",
-   // "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-   // "Upgrade-Insecure-Requests": "1",
-   // "Accept-Language": "zh-cn"
+
 };
   const request = {
       url: url,
@@ -135,8 +117,7 @@ function Readarticle(notice) {
   
 
 $.post(request, async(error, request, data) =>{
-      try {
-			if(request.statusCode==200)	
+      try {	
 			  $.log(notice);					 
       } catch(e) {
 			$.log(e)
@@ -150,24 +131,10 @@ $.post(request, async(error, request, data) =>{
 
 function Getreward() {
   return new Promise((resolve, reject) => {
-  const url = "http://app.zhongchuanjukan.com/jkd/account/readAccount.action";
-  const body = `jsondata={"read_weal":0,"appid":"xzwl","securitykey":"","paytype":1,"channel":"iOS","apptoken":"xzwltoken070704","appversioncode":"102","time":"1611322747","appversion":"1.0.2","openid":"12f498e6382246848a07689acf06506b","os":"iOS","artid":"${artid}","accountType":"0","readmodel":"1"}`;
- //$.log(artid);
- //$.log(body);
-  const headers = {
-    "Cookie": "JSESSIONID=71632B21C78157AC353BC26A5CE9C8F2; CNZZDATA1279070688=1471101462-1611226426-%7C1611320199; CNZZDATA1279070682=539289172-1611233337-%7C1611233337; UM_distinctid=17724945353cc6-04aad8e66cd4fe8-754c1451-4a574-177249453541089",
-    //"Accept": "*/*",
-    //"Connection": "close",
-    //"Content-Type": "application/x-www-form-urlencoded",
-    //"Accept-Encoding": "gzip, deflate",
-    //"Host": "app.zhongchuanjukan.com",
-    //"User-Agent": "wen lu kan dian/1.0.2 (iPhone; iOS 14.3; Scale/3.00)",
-    //"Content-Length": "616",
-    //"Accept-Language": "zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7"
-};
+
   const request = {
       url: url,
-      headers: headers,
+      headers: JSON.parse(Cookie),
       body: body
   };
   
