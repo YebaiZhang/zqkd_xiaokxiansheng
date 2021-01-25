@@ -2,7 +2,7 @@
 const $ = new Env('文旅看点')
 //Cookie={"Cookie": "JSESSIONID=E8278090F218FC43FF77AE5D3A628571; CNZZDATA1279070688=1471101462-1611226426-%7C1611320199; CNZZDATA1279070682=539289172-1611233337-%7C1611233337; UM_distinctid=17724945353cc6-04aad8e66cd4fe8-754c1451-4a574-177249453541089"}
 //Cookie={"Cookie": "JSESSIONID=E8278090F218FC43FF77AE5D3A628571;"}
-let CookieVal = $.getdata('vlkd_ck')
+let Cookie = $.getdata('vlkd_ck')
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
