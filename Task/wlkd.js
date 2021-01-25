@@ -67,7 +67,6 @@ $.post(request, async(error, request, data) =>{
 				    //$.log(artlist.item_type)
 				   if(artlist.item_type=="article")
 				   {
-					   $.log(" 【666】");
 						let artTitle = artlist.art_title;
 						artid =artlist.art_id;
                         $.log(" 【阅读文章】: "+artTitle);
