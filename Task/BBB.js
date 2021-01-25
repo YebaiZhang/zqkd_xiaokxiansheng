@@ -7,8 +7,8 @@ let notice = ''
 
 
 if ($.isNode()) {
-      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
-      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============`)
+      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============`)
 }
 
 CookieArr=[{"store":"appstore",
@@ -149,7 +149,7 @@ return new Promise((resolve, reject) => {
      if(response.statusCode == 200 && userinfo.code != -1){
           $.log('模擬登陸成功')
 		  dayjinbi=userinfo.day_jinbi;
-     notice += '步步寶帳號: '+userinfo.username+'當前金幣: '+userinfo.jinbi+',約'+userinfo.money+'元\n'
+     notice += '步步寶帳號: '+userinfo.username+'當前金幣:'+userinfo.jinbi+',約'+userinfo.money+'元\n'
     }else{
      notice += '️異常原因: '+userinfo.msg+'\n'
            }
