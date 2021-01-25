@@ -67,6 +67,7 @@ $.post(request, async(error, request, data) =>{
 				    //$.log(artlist.item_type)
 				   if(artlist.item_type=="article")
 				   {
+					   $.log(" 【666】");
 						let artTitle = artlist.art_title;
 						artid =artlist.art_id;
                         $.log(" 【阅读文章】: "+artTitle);
@@ -130,7 +131,9 @@ $.post(request, async(error, request, data) =>{
 
 function Getreward() {
   return new Promise((resolve, reject) => {
-
+  const url = "http://app.zhongchuanjukan.com/jkd/account/readAccount.action";
+  const body = `jsondata={"read_weal":0,"appid":"xzwl","securitykey":"","paytype":1,"channel":"iOS","apptoken":"xzwltoken070704","appversioncode":"102","time":"1611322747","appversion":"1.0.2","openid":"12f498e6382246848a07689acf06506b","os":"iOS","artid":"${artid}","accountType":"0","readmodel":"1"}`;
+ 
   const request = {
       url: url,
       headers: JSON.parse(Cookie),
