@@ -54,7 +54,7 @@ for(let i=1;i<=CookieArr.length;i++)
       await checkWaterNum()
       await clickTaskStatus()
       await watchTaskStatus()
-      //await helpStatus()
+             //await helpStatus()
       await getNewsId()
       await getQuestionId()
       await guaList()
@@ -197,7 +197,7 @@ return new Promise((resolve, reject) => {
 }
    $.post(signdouble,async(error, response, data) =>{
      const signin2 = JSON.parse(data)
-$.log('開始領取每日觀看獎勵')
+	 $.log('领取簽到翻倍觀看獎勵')
       if(signin2.code == 1) {
           $.log('簽到翻倍成功')
            }else{
@@ -284,12 +284,18 @@ $.log('開始查詢刮刮卡ID')
      const guaid = JSON.parse(data)
       if(guaid.ka > 0){
       for (guaId of guaid.list)
-      if(guaId.is_ad == 0)
-$.log('查詢刮刮卡ID成功,5s後開始刮卡')
-      guaID = guaId.id
-$.log('ID: '+guaID)
-          await $.wait(5000)
-          await guaDet()
+	  {
+		   if(guaId.is_ad == 0)
+		   {
+			   guaID = guaId.id
+			   $.log('查詢刮刮卡ID成功,5s後開始刮卡,ID: '+guaID)
+			   await $.wait(5000)
+			   await guaDet()
+		   }
+				
+		  
+	  }
+     
          }else{
 $.log('️刮刮卡已用完,請明天再刮吧！')
         }
@@ -356,7 +362,7 @@ return new Promise((resolve, reject) => {
 }
    $.post(guadouble,async(error, response, data) =>{
      const guaka2 = JSON.parse(data)
-$.log('開始領取每日觀看獎勵')
+     $.log('领取刮卡翻倍觀看獎勵')
       if(guaka2.code == 1) {
           $.log('刮卡翻倍成功')
           await $.wait(2000)
@@ -737,13 +743,17 @@ return new Promise((resolve, reject) => {
     headers: CookieVal,
 }
    $.post(checkhomejin,async(error, response, data) =>{
+	   
      const checkhomejb = JSON.parse(data)
-     if(checkhomejb.right_st !=2 && checkhomejb.right_time > 0){
+	  //$.log(data)
+	 rightTime=(typeof checkhomejb.right_time111 !== 'undefined')?checkhomejb.right_time:1;
+	 //$.log(rightTime)
+     if(checkhomejb.right_st !=2 && rightTime > 0){
 $.log('開始查詢首頁金幣狀態')
-$.log('等待'+(checkhomejb.right_time+5)+'s领取首页金币')
-          await $.wait(checkhomejb.right_time*1000+5000)
+$.log('等待'+(rightTime+5)+'s领取首页金币')
+          await $.wait(rightTime*1000+5000)
           await homeJin()
-         }else if(checkhomejb.right_st == 0 && checkhomejb.right_time <= 0){
+         }else if(checkhomejb.right_st == 0 && rightTime <= 0){
 $.log('開始查詢首頁金幣狀態')
           await homeJin()
          }else if(checkhomejb.right_st == 2 && checkhomejb.jindan_show != 2){
@@ -1101,12 +1111,13 @@ $.log('開始查詢抽獎次數')
          }else if(num.lucky_num == 0) {
           $.log('️今日抽獎次數已用完,1s後查詢寶箱狀態')
           await $.wait(1000)
+		  luckyboxNum=0;
        for (box of num.lucky_box){
-          //$.log(box)
+          luckyboxNum++;
           if (box != 2)
-          await luckyBox()
+          await luckyBox();
           if (box == 2)
-          $.log('️寶箱已開啟')
+          $.log('️寶箱已開啟'+luckyboxNum);
          }
        }
           resolve()
