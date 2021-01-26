@@ -8,7 +8,7 @@ let notice = ''
 
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============`)
-      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============`)
 	  
 }
 
@@ -45,20 +45,20 @@ now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8
 for(let i=1;i<=CookieArr.length;i++)
 	{
 	  CookieVal=CookieArr[i-1];
-	  $.log("【步步宝账户"+i+"】\n");
+	  $.log("\n【步步宝账户"+i+"】");
       await userInfo()
 	  await txAction()
-     // await signIn()
-     // await zaoWanDkInfo()
-    //  await sleepStatus()
-   //   await checkWaterNum()
-   //   await clickTaskStatus()
-   //   await watchTaskStatus()
-   //   await helpStatus()
-   //   await getNewsId()
-   //   await getQuestionId()
-   //   await guaList()
-   //   await checkHomeJin()    
+      await signIn()
+      await zaoWanDkInfo()
+      await sleepStatus()
+      await checkWaterNum()
+      await clickTaskStatus()
+      await watchTaskStatus()
+      await helpStatus()
+      await getNewsId()
+      await getQuestionId()
+      await guaList()
+      await checkHomeJin()    
 	}
 	  await showmsg()
 })()
