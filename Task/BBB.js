@@ -7,8 +7,9 @@ let notice = ''
 
 
 if ($.isNode()) {
-      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
+      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============`)
       console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
+	  
 }
 
 CookieArr=[{"store":"appstore",
@@ -37,7 +38,7 @@ CookieArr=[{"store":"appstore",
 "store": "appstore",
 "Cookie": "PHPSESSID=ab4luj712iqor1jpklt17qlnb5"}]
 let dayjinbi=0;
-
+let lasttxTime=0;
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 
 !(async () => {
@@ -79,15 +80,16 @@ var getBoxId = (function () {
 })();
 function autoTx(){
 if(dayjinbi<5000){
-	$.log('今日金币少于5000，请先赚金币');
+	$.log('今日金币'+dayjinbi+'少于5000，请先赚金币');
 	return;	
 }
 nowTime=new Date().getTime();
-$.log(nowTime);
-lagTime=nowTime-`${lasttxTime}`;
+lagTime=nowTime-lasttxTime;
 
 if(lagTime<86400000){
-	$.log('提现间隔小于24小时，请稍后再试');
+	pertx=new Date(lasttxTime).toLocaleString();	
+	nowtx=new Date(nowTime).toLocaleString();
+	$.log('上次提现:'+pertx+'\n本次提现:'+nowtx+'\n提现间隔小于24小时，请稍后再试');
 	return;	
 }
 else
@@ -150,7 +152,7 @@ return new Promise((resolve, reject) => {
      if(response.statusCode == 200 && userinfo.code != -1){
           $.log('模擬登陸成功')
 		  dayjinbi=userinfo.day_jinbi;
-     notice += '步步寶帳號: '+userinfo.username+'當前金幣: '+userinfo.jinbi+',約'+userinfo.money+'元\n'
+     notice += '步步寶帳號: '+userinfo.username+'當前金幣: '+userinfo.jinbi+', 約'+userinfo.money+'元\n'
     }else{
      notice += '️異常原因: '+userinfo.msg+'\n'
            }
