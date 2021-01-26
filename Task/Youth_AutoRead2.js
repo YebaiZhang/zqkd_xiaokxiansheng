@@ -69,19 +69,19 @@ function AutoRead() {
       if (readres.error_code == '0' && typeof readres.items.read_score === 'number') {
         console.log(`本次阅读获得${readres.items.read_score}个青豆，请等待30s后执行下一次阅读`);
         readscore += readres.items.read_score;
-       await waitloading(1);
+        waitloading(1);
 		await $.wait(30000);
       }
       else if (readres.error_code == '0' && typeof readres.items.score === 'number') {
         console.log(`本次阅读获得${readres.items.score}个青豆，即将开始下次阅读`)
         readscore += readres.items.score;
-        await waitloading(1);
+         waitloading(1);
 	   await $.wait(30000);
       }
     
       else  {
         console.log(`第${$.index}次阅读请求失败`)
-		 await waitloading(1);
+		  waitloading(1);
 		 await $.wait(30000);
       }
 
