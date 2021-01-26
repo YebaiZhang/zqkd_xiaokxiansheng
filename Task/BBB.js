@@ -745,8 +745,8 @@ return new Promise((resolve, reject) => {
    $.post(checkhomejin,async(error, response, data) =>{
 	   
      const checkhomejb = JSON.parse(data)
-	  //$.log(data)
-	 rightTime=(typeof checkhomejb.right_time111 !== 'undefined')?checkhomejb.right_time:1;
+	  //$.log(rightTime)
+	 rightTime=(typeof checkhomejb.right_time !== 'undefined')?checkhomejb.right_time:0;
 	 //$.log(rightTime)
      if(checkhomejb.right_st !=2 && rightTime > 0){
 $.log('開始查詢首頁金幣狀態')
