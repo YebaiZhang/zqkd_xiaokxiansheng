@@ -83,7 +83,7 @@ if(dayjinbi<5000){
 	$.log('今日金币'+dayjinbi+'少于5000，请先赚金币');
 	return;	
 }
-nowTime=new Date().getTime();
+nowTime=new Date().getTime()+8*60*60*1000;
 lagTime=nowTime-lasttxTime;
 
 if(lagTime<86400000){
