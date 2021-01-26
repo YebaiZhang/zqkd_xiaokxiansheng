@@ -36,7 +36,20 @@ CookieArr=[{"store":"appstore",
 "Connection": "keep-alive",
 "tokenstr": "58D207FBEF6A32DDFADA6B00C527702G1611307971",
 "store": "appstore",
-"Cookie": "PHPSESSID=ab4luj712iqor1jpklt17qlnb5"}]
+"Cookie": "PHPSESSID=ab4luj712iqor1jpklt17qlnb5"},
+{'store' : `appstore`,
+'tokenstr' : `1B7B45B00A6FB335CFB050420526472G1611307963`,
+'Connection' : `keep-alive`,
+'Accept-Encoding' : `gzip, deflate, br`,
+'version' : `10`,
+'idfa' : `A601E0C1-2F41-4967-8A9C-9E3CCA978FF2`,
+'User-Agent' : `BBB/132 CFNetwork/1209 Darwin/20.2.0`,
+'platform' : `2`,
+'imei' : `6A23A82D-9A0E-41C2-85E7-71D4D982A4DD`,
+'Cookie' : `PHPSESSID=8ae84od70t7nks6rfb5u0c83f4`,
+'Host' : `bububao.duoshoutuan.com`,
+'Accept-Language' : `zh-cn`,
+'Accept' : `*/*`}]
 let dayjinbi=0;
 let lasttxTime=0;
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
