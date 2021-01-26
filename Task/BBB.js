@@ -54,7 +54,7 @@ for(let i=1;i<=CookieArr.length;i++)
       await checkWaterNum()
       await clickTaskStatus()
       await watchTaskStatus()
-      await helpStatus()
+      //await helpStatus()
       await getNewsId()
       await getQuestionId()
       await guaList()
@@ -358,7 +358,7 @@ return new Promise((resolve, reject) => {
      const guaka2 = JSON.parse(data)
 $.log('開始領取每日觀看獎勵')
       if(guaka2.code == 1) {
-          $.log('刮卡翻倍成功,等待2s後查詢下一張刮刮卡ID')
+          $.log('刮卡翻倍成功')
           await $.wait(2000)
            }else{
           $.log('️刮卡翻倍失敗:'+guaka2.msg)
