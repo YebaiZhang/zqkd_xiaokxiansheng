@@ -8,7 +8,7 @@ on:
    # - cron: '0 21 * * *'
 jobs:
   build:
-    runs-on: ubuntu-18.04      
+    runs-on: windows-2019     
     steps:
       - name: Checkout
         run: |
