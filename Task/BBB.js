@@ -88,7 +88,7 @@ for(let i=1;i<=CookieArr.length;i++)
 	  $.log("\n【步步宝账户"+i+"】");
       await userInfo()
 	  await txAction()
-    /*  await signIn()
+      await signIn()
       await zaoWanDkInfo()
       await sleepStatus()
       await checkWaterNum()
@@ -98,10 +98,10 @@ for(let i=1;i<=CookieArr.length;i++)
       await getNewsId()
       await getQuestionId()
       await guaList()
-      await checkHomeJin()*/
+      await checkHomeJin()
 
 	}
-	//  await showmsg()
+	  await showmsg()
 	 
 })()
     .catch((e) => $.logErr(e))
