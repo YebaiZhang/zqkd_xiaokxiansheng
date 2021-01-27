@@ -80,6 +80,7 @@ let dayjinbi=0;
 let lasttxTime=0;
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
 
+
 !(async () => {
 for(let i=1;i<=CookieArr.length;i++)
 	{
@@ -87,7 +88,7 @@ for(let i=1;i<=CookieArr.length;i++)
 	  $.log("\n【步步宝账户"+i+"】");
       await userInfo()
 	  await txAction()
-      await signIn()
+      /*await signIn()
       await zaoWanDkInfo()
       await sleepStatus()
       await checkWaterNum()
@@ -97,9 +98,11 @@ for(let i=1;i<=CookieArr.length;i++)
       await getNewsId()
       await getQuestionId()
       await guaList()
-      await checkHomeJin()    
+      await checkHomeJin()*/ 
+
 	}
-	  await showmsg()
+	//  await showmsg()
+	 
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -126,8 +129,9 @@ nowTime=new Date().getTime()+8*60*60*1000;
 lagTime=nowTime-lasttxTime;
 
 if(lagTime<86400000){
-	pertx=new Date(lasttxTime).toLocaleString();	
-	nowtx=new Date(nowTime).toLocaleString();
+	  
+	pertx=new Date(lasttxTime).toLocaleString('chinese',{hour12:false})	
+	nowtx=new Date(nowTime).toLocaleString('chinese',{hour12:false})
 	$.log('上次提现:'+pertx+'\n本次提现:'+nowtx+'\n提现间隔小于24小时，请稍后再试');
 	return;	
 }
