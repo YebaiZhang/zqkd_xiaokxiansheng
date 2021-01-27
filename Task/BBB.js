@@ -88,7 +88,7 @@ for(let i=1;i<=CookieArr.length;i++)
 	  $.log("\n【步步宝账户"+i+"】");
       await userInfo()
 	  await txAction()
-      await signIn()
+    /*  await signIn()
       await zaoWanDkInfo()
       await sleepStatus()
       await checkWaterNum()
@@ -98,10 +98,10 @@ for(let i=1;i<=CookieArr.length;i++)
       await getNewsId()
       await getQuestionId()
       await guaList()
-      await checkHomeJin()
+      await checkHomeJin()*/
 
 	}
-	  await showmsg()
+	//  await showmsg()
 	 
 })()
     .catch((e) => $.logErr(e))
@@ -126,13 +126,14 @@ if(dayjinbi<5000){
 	return;	
 }
 nowTime=new Date().getTime()+8*60*60*1000;
-lagTime=nowTime-lasttxTime;
+let nowdate=new Date(nowTime).toLocaleDateString();
+let lastdate=new Date(lasttxTime).toLocaleDateString();
 
-if(lagTime<86400000){
+if(lastdate==nowdate){
 	  
 	pertx=new Date(lasttxTime).toLocaleString('chinese',{hour12:false})	
 	nowtx=new Date(nowTime).toLocaleString('chinese',{hour12:false})
-	$.log('上次提现:'+pertx+'\n本次提现:'+nowtx+'\n提现间隔小于24小时，请稍后再试');
+	$.log('上次提现:'+pertx+'\n本次提现:'+nowtx+'\n今日已提现，请明天再试');
 	return;	
 }
 else
@@ -171,7 +172,10 @@ function txAction() {
 	 if(response.statusCode == 200)
 	 {
 		if(txRecord.length>0)
+		{
 			lasttxTime=new Date(txRecord[0].add_time).getTime();
+		}
+			
 			else
 			lasttxTime=0;
 		autoTx();
