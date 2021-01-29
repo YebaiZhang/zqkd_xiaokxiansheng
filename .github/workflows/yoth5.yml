@@ -26,4 +26,4 @@ jobs:
       - name: '运行 【中青看点5】'
         run: |
           cd ~/js   
-          node Task/youth4.js
+          node Task/youth5.js
