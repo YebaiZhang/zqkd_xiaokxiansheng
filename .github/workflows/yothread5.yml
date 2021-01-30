@@ -26,4 +26,4 @@ jobs:
       - name: '运行 【中青阅读5】'
         run: |
           cd ~/js   
-          node Task/Youth_AutoRead4.js
+          node Task/Youth_AutoRead5.js
