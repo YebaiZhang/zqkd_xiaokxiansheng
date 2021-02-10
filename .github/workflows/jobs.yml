@@ -9,6 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest       
     steps:
+      
       - name: Checkout
         run: |
           git clone https://github.com/xiaokxiansheng/js.git ~/js
@@ -23,9 +24,14 @@ jobs:
           npm install cron
           npm install request
           curl ipinfo.io/json
-      - name: '运行 【机场签到】'
+      
+      - name: '【机场签到】'
         run: |
           cd ~/js   
           node Task/checkin.js
+      - name: '【书旗小说】'
+        run: |
+          cd ~/js   
           node Task/sqxs.js
+ 
 
