@@ -10,12 +10,6 @@ let cookie;
     .finally(() => {
       $.done();
     })
- 
-  
-  
-  
-  
-  
 async function all() {	
 	cookie= await login();  
 	if (cookie!= 0){
