@@ -21,7 +21,6 @@ console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().to
 console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============`)
 
 
-
 !(async () => {
    if (!ReadArr[0]) {
     console.log($.name, '【提示】请把抓包的请求体填入Github 的 Secrets 中，请以&隔开')
