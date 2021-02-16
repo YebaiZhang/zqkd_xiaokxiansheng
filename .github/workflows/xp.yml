@@ -26,4 +26,4 @@ jobs:
       - name: '运行 【笑谱】'
         run: |
           cd ~/js   
-          node Task/iboxpay.js
+          node Task/iboxpays.js
