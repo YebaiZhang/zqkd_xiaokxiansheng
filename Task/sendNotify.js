@@ -242,6 +242,7 @@ function ddBotNotify(text, desp) {
     }
   })
 }
+
 module.exports = {
   sendNotify,
   BarkNotify,
