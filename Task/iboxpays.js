@@ -942,7 +942,7 @@ function withdraw(i) {
                         console.log('【余额提现】'+$.withdraw.data.remark)      
                     }
                     if ($.withdraw.resultCode == 0) {
-                        console.log($.withdraw.errorDesc + '\n');
+                        console.log('【余额提现】'+$.withdraw.errorDesc);
                     }
                 } catch (e) {
                     $.logErr(e, resp);
