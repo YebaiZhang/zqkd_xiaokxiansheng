@@ -1,13 +1,15 @@
 
+
+
+
 const $ = new Env('步步寶')
 let notice = ''
 
 
-if ($.isNode()) {
-      console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============`)
-      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============`)
+if ($.isNode())    
+      console.log(`============ 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime() + 8 * 60 * 60 * 1000).toLocaleString()}  =============\n`)
 	  
-}
+
 
 CookieArr=[{"store":"appstore",
 "tokenstr":"A7BC524EFE264F26793B6BB92525847G1611042389",
@@ -79,13 +81,14 @@ now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8
 
 
 !(async () => {
+//await $.log("【用户信息】");
 for(let i=1;i<=CookieArr.length;i++)
 	{
 	  CookieVal=CookieArr[i-1];
-	  $.log("\n【步步宝账户"+i+"】");
+	  
       await userInfo()
 	  await txAction()
-      await signIn()
+    /*await signIn()
       await zaoWanDkInfo()
       await sleepStatus()
       await checkWaterNum()
@@ -96,9 +99,9 @@ for(let i=1;i<=CookieArr.length;i++)
       await getQuestionId()
       await guaList()
       await checkHomeJin()
-
+*/
 	}
-	  await showmsg()
+	//  await showmsg()
 	 
 })()
     .catch((e) => $.logErr(e))
@@ -118,91 +121,93 @@ var getBoxId = (function () {
     };
 })();
 function autoTx(){
-if(dayjinbi<5000){
-	$.log('今日金币'+dayjinbi+'少于5000，请先赚金币');
-	return;	
-}
-nowTime=new Date().getTime()+8*60*60*1000;
-let nowdate=new Date(nowTime).toLocaleDateString();
-let lastdate=new Date(lasttxTime).toLocaleDateString();
-
-if(lastdate==nowdate){
-	  
-	pertx=new Date(lasttxTime).toLocaleString('chinese',{hour12:false})	
-	nowtx=new Date(nowTime).toLocaleString('chinese',{hour12:false})
-	$.log('上次提现:'+pertx+'\n本次提现:'+nowtx+'\n今日已提现，请明天再试');
-	return;	
-}
-else
-	return new Promise((resolve, reject) => {
-	let userInfo ={
-		url: 'https://bububao.duoshoutuan.com/user/tixian?',
-		headers: CookieVal,
-		body: `tx=0.3&`,
+	if(dayjinbi<5000)
+	{
+		$.log('【自动提现】今日金币'+dayjinbi+'少于5000，请先赚金币');
+		return;	
 	}
-	$.post(userInfo,async(error, response, data) =>{
-		const txResult = JSON.parse(data)
-		
-		if(response.statusCode == 200 && txResult.code != -1)
-		{
-			$.log('提现成功') 
-		}
-		else
-		{
-			$.log('提现失败') 
-			$.log(txResult.tip+":"+txResult.msg)
-		}
-			resolve()
+	nowTime=new Date().getTime()+8*60*60*1000;
+	let nowdate=new Date(nowTime).toLocaleDateString();
+	let lastdate=new Date(lasttxTime).toLocaleDateString();
+
+	if(lastdate==nowdate)
+	{
+		pertx=new Date(lasttxTime).toLocaleString('chinese',{hour12:false})	
+		nowtx=new Date(nowTime).toLocaleString('chinese',{hour12:false})
+		$.log('【自动提现】上次提现:'+pertx+'，本次提现:'+nowtx+'，今日已提现，请明天再试');
+		return;	
+	}
+	else
+		return new Promise((resolve, reject) => {
+			let userInfo =
+			{
+				url: 'https://bububao.duoshoutuan.com/user/tixian?',
+				headers: CookieVal,
+				body: `tx=0.3&`,
+			}
+			$.post(userInfo,async(error, response, data) =>{
+				const txResult = JSON.parse(data)
+				if(response.statusCode == 200 && txResult.code != -1)
+				{
+					$.log('【自动提现】提现成功') 
+				}
+				else
+				{
+					$.log('【自动提现】提现失败') 
+					$.log(txResult.tip+":"+txResult.msg)
+				}
+				resolve()
+			})
 		})
-	})
 		
 	
 }
 function txAction() {
 	return new Promise((resolve, reject) => {
-    let userInfo ={
-    url: 'https://bububao.duoshoutuan.com/user/tixian_record?',
-    headers: CookieVal,
-}
-   $.post(userInfo,async(error, response, data) =>{
-     const txRecord = JSON.parse(data)
-	 if(response.statusCode == 200)
-	 {
-		if(txRecord.length>0)
-		{
-			lasttxTime=new Date(txRecord[0].add_time).getTime();
+		let userInfo ={
+			url: 'https://bububao.duoshoutuan.com/user/tixian_record?',
+			headers: CookieVal,
 		}
-			
-			else
-			lasttxTime=0;
-		autoTx();
-			
-	 }
-	
-          resolve()
-    })
-   })
+		$.post(userInfo,async(error, response, data) =>{
+			const txRecord = JSON.parse(data)
+			if(response.statusCode == 200)
+			{
+				if(txRecord.length>0)
+				{
+					lasttxTime=new Date(txRecord[0].add_time).getTime();
+				}
+				else
+					lasttxTime=0;
+				autoTx();			
+			}
+			resolve()
+		})
+	})
   } 
 
 function userInfo() {
-return new Promise((resolve, reject) => {
-  let timestamp=new Date().getTime();
-  let userInfo ={
-    url: 'https://bububao.duoshoutuan.com/user/profile',
-    headers: CookieVal,
-}
-   $.post(userInfo,async(error, response, data) =>{
-     const userinfo = JSON.parse(data)
-     if(response.statusCode == 200 && userinfo.code != -1){
-          $.log('模擬登陸成功')
-		  dayjinbi=userinfo.day_jinbi;
-     notice += '步步寶帳號: '+userinfo.username+'當前金幣: '+userinfo.jinbi+', 約'+userinfo.money+'元\n'
-    }else{
-     notice += '️異常原因: '+userinfo.msg+'\n'
-           }
-          resolve()
-    })
-   })
+	return new Promise((resolve, reject) => {
+		 let timestamp=new Date().getTime();
+		 let userInfo =
+		 {
+		 	url: 'https://bububao.duoshoutuan.com/user/profile',
+		 	headers: CookieVal,
+		 }
+		 $.post(userInfo,async(error, response, data) =>{
+		 const userinfo = JSON.parse(data)
+		 if(response.statusCode == 200 && userinfo.code != -1)
+		 {
+		 	dayjinbi=userinfo.day_jinbi;
+		 	$.log('==========【'+userinfo.username+'】==========')
+			$.log('【当前金币】'+userinfo.jinbi+', 约'+userinfo.money+'元')
+		 }
+		 else
+		 {
+		 	$.log('️異常原因: '+userinfo.msg)
+		 }
+		 resolve()
+		 })
+	})
   } 
 
 
