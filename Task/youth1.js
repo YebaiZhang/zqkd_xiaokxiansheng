@@ -70,7 +70,6 @@ if (isGetCookie = typeof $request !== 'undefined') {
    $.done()
 }
 
-
  !(async () => {
 
 	  
