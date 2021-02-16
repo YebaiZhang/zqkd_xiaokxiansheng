@@ -261,11 +261,11 @@ for (let i = 0; i < Length; i++) {
        LiveTime[i]=0;
  }
     !(async () => {
-        while(true)
-        {
+       // while(true)
+       // {
             await all(); 
 
-        }
+       // }
        
     })()
     .catch((e) => {
