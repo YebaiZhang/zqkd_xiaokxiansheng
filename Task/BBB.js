@@ -1,7 +1,4 @@
 
-
-
-
 const $ = new Env('步步寶')
 let notice = ''
 
