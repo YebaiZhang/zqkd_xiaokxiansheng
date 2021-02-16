@@ -1,10 +1,6 @@
 
 const $=Env('机场签到')
 let cookie;
- 
- 
- 
- 
 !(async () => {
 	  await all(); 
 })()
