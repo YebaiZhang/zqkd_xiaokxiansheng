@@ -276,7 +276,6 @@ function zaoWanDkInfo() {
 				title2 = zwdkinfo.title2
 				await zaoWanDk()
 			}
-			else
 				resolve()
 		})
 	})
@@ -319,7 +318,7 @@ function dkClick() {
 			const clickdk = JSON.parse(data)
 			if(clickdk.code == 1) 
 			{
-				$.log('【早起打卡】'+clickdk.msg+'+ '+clickdk.jinbi)
+				$.log('【早起打卡】'+clickdk.msg+'+'+clickdk.jinbi)
 			}
 			else
 			{
