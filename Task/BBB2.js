@@ -11,7 +11,22 @@ if ($.isNode())
 	  
 
 
-CookieArr=[{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "keep-alive","Content-Length": "0","Cookie": "PHPSESSID=muvh9j954nnrueuddc2l65dah4","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "95B939DA1ED80E998E13F59B3527794G1613471646","version": "11"},{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "keep-alive","Content-Length": "0","Cookie": "PHPSESSID=t5le1vodjjtbba663jaok4bkh7","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "AB559B4CD6DE8D3A1F3783B8C531203G1613479221","version": "11"},{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "close","Content-Length": "0","Cookie": "PHPSESSID=m4jfop06alg76t0n74mmfkirs7","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "18E6EB85BAFE9DE539A35D3DB531204G1613479618","version": "11"}]
+CookieArr=[{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "keep-alive","Content-Length": "0","Cookie": "PHPSESSID=muvh9j954nnrueuddc2l65dah4","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "95B939DA1ED80E998E13F59B3527794G1613471646","version": "11"},
+{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "keep-alive","Content-Length": "0","Cookie": "PHPSESSID=t5le1vodjjtbba663jaok4bkh7","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "AB559B4CD6DE8D3A1F3783B8C531203G1613479221","version": "11"},
+{"Accept": "*/*","Accept-Encoding": "gzip, deflate, br","Accept-Language": "zh-cn","Connection": "close","Content-Length": "0","Cookie": "PHPSESSID=m4jfop06alg76t0n74mmfkirs7","Host": "bububao.duoshoutuan.com","User-Agent": "BBB/133 CFNetwork/1209 Darwin/20.2.0","idfa": "00000000-0000-0000-0000-000000000000","imei": "AD035F49-5B70-4AF0-AF18-DF6067A0204F","platform": "2","store": "appstore","tokenstr": "18E6EB85BAFE9DE539A35D3DB531204G1613479618","version": "11"},
+{'store' : `appstore`,
+'tokenstr' : `1B7B45B00A6FB335CFB050420526472G1611307963`,
+'Connection' : `keep-alive`,
+'Accept-Encoding' : `gzip, deflate, br`,
+'version' : `10`,
+'idfa' : `A601E0C1-2F41-4967-8A9C-9E3CCA978FF2`,
+'User-Agent' : `BBB/132 CFNetwork/1209 Darwin/20.2.0`,
+'platform' : `2`,
+'imei' : `6A23A82D-9A0E-41C2-85E7-71D4D982A4DD`,
+'Cookie' : `PHPSESSID=8ae84od70t7nks6rfb5u0c83f4`,
+'Host' : `bububao.duoshoutuan.com`,
+'Accept-Language' : `zh-cn`,
+'Accept' : `*/*`}]
 let dayjinbi=0;
 let lasttxTime=0;
 now = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
