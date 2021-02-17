@@ -110,6 +110,26 @@ iboxpayheaderArr=
     //"Content-Length":"86",
     "Content-Type":"application/json; charset=utf-8",
     "Host":"veishop.iboxpay.com",
+    "User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE840)",
+    "X-User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE840)",
+    "mchtNo":"100529600058887",
+    //"random":"97C2C587-06AE-41D9-A953-D890534CA436",
+    "shopkeeperId":"1148855820752977920",
+    //"signature":"7186A026207759CAE3E4930922E0AF6913C1E53B2E149C48C357389BF9975D99",
+    "source":"VEISHOP_APP_IOS",
+    //"timestamp":"1613557461907",
+    "token":"a4c2da143c63490ca656ddac7af74635",
+    "traceid":"3134743528733152870416135570804802a7f2bfa26fc",
+    "version":"1.4.8"
+},
+{
+    "Accept":"*/*",
+    "Accept-Encoding":"gzip, deflate, br",
+    "Accept-Language":"zh-Hans;q=1, en;q=0.9",
+    "Connection":"keep-alive",
+    //"Content-Length":"86",
+    "Content-Type":"application/json; charset=utf-8",
+    "Host":"veishop.iboxpay.com",
     "User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE847)",
     "X-User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 4B4F2713-499B-4701-97DF-F48E510FE847)",
     "mchtNo":"100529600058887",
@@ -264,7 +284,7 @@ iboxpayheaderArr=
 
 
 
-refreshTokenID=['7b79386a555e47bab4f89fc422bb2e31','b1132b0904a5431d92366600fa328a5f','ba516fbec37d409ab78dc8c13fe75bdb','bfc3e0a1c49843e8916903d96f038b95','2b071e135d9149049d395598669c0552','121f8fcae1e7427ebcc67fea4e2b9411','5efd43e8852b42cfb1844afe2e13ed01','3939f148beeb44ae8249c704e9d8837c','f5de6d4171e842738ccca927addb7dc1','61bd17ec5502459d81659f3737711cc1']
+refreshTokenID=['865097655e614645998c715659dd5bdb','7b79386a555e47bab4f89fc422bb2e31','b1132b0904a5431d92366600fa328a5f','ba516fbec37d409ab78dc8c13fe75bdb','bfc3e0a1c49843e8916903d96f038b95','2b071e135d9149049d395598669c0552','121f8fcae1e7427ebcc67fea4e2b9411','5efd43e8852b42cfb1844afe2e13ed01','3939f148beeb44ae8249c704e9d8837c','f5de6d4171e842738ccca927addb7dc1','61bd17ec5502459d81659f3737711cc1']
 
 
 
