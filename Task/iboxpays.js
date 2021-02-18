@@ -397,6 +397,7 @@ async function all() {
 	await queryvideoPublishId(0)//视频列表
 	for (let i = 0; i < Length; i++) {  
 		await play(i) //看视频
+		await $.wait(1000);
 	    await video(i);
     }
 }
