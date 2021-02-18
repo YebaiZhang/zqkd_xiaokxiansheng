@@ -377,6 +377,7 @@ async function all() {
      
     for (let i = 0; i < Length; i++) {    
         await refreshtoken(i);  //更新TOKEN 
+		await $.wait(1000);
     }
         
     for (let i = 0; i < Length; i++) {   
@@ -385,13 +386,14 @@ async function all() {
         await coin(i); //账户信息
         await withdraw(i); //提现
         await sylist(i); //收益列表
-		
+		await $.wait(1000);
 
     }
 	await hdid(0); //活动id
     await liveslist(0); //直播节目表
     for (let j = 0; j < liveIdcd[0]; j++) {
         await lives(j); //看直播
+		await $.wait(1000);
     }
 	await $.wait(30000);
 	await queryvideoPublishId(0)//视频列表
