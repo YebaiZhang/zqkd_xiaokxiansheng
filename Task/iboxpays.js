@@ -105,6 +105,26 @@ iboxpayheaderArr=
 [{
     "Accept":"*/*",
     "Accept-Encoding":"gzip, deflate, br",
+    "Accept-Language":"zh-Hans-CN;q=1, zh-Hant-HK;q=0.9, hi-CN;q=0.8, en-CN;q=0.7",
+    "Connection":"keep-alive",
+    //"Content-Length":"86",
+    "Content-Type":"application/json; charset=utf-8",
+    "Host":"veishop.iboxpay.com",
+    "User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2FD8)",
+    "X-User-Agent":"VeiShop, 1.4.8 (iOS, 14.3, zh_CN, Apple, iPhone, 95872F01-6A5D-4391-BEFD-88981ECC2FD8)",
+    "mchtNo":"100529600058887",
+    //"random":"D0B5B26D-EFC9-454F-B33E-64668EE2B992",
+    "shopkeeperId":"1148855820752977920",
+    //"signature":"8B5800F869EB68E32137883E00EBD30CD97A4D3C3952769C9DCA379B621BA6F2",
+    "source":"VEISHOP_APP_IOS",
+    //"timestamp":"1613655698987",
+    "token":"352b20e4c6584621965131450d63d152",
+    "traceid":"3135973249405943808016136556264312a7f2bfa26fc",
+    "version":"1.4.8"
+},
+{
+    "Accept":"*/*",
+    "Accept-Encoding":"gzip, deflate, br",
     "Accept-Language":"zh-Hans;q=1, en;q=0.9",
     "Connection":"keep-alive",
     //"Content-Length":"86",
@@ -284,7 +304,7 @@ iboxpayheaderArr=
 
 
 
-refreshTokenID=['865097655e614645998c715659dd5bdb','7b79386a555e47bab4f89fc422bb2e31','b1132b0904a5431d92366600fa328a5f','ba516fbec37d409ab78dc8c13fe75bdb','bfc3e0a1c49843e8916903d96f038b95','2b071e135d9149049d395598669c0552','121f8fcae1e7427ebcc67fea4e2b9411','5efd43e8852b42cfb1844afe2e13ed01','3939f148beeb44ae8249c704e9d8837c','f5de6d4171e842738ccca927addb7dc1','61bd17ec5502459d81659f3737711cc1']
+refreshTokenID=['5f50e70aa7254bd2993f7bc6bb808741','865097655e614645998c715659dd5bdb','7b79386a555e47bab4f89fc422bb2e31','b1132b0904a5431d92366600fa328a5f','ba516fbec37d409ab78dc8c13fe75bdb','bfc3e0a1c49843e8916903d96f038b95','2b071e135d9149049d395598669c0552','121f8fcae1e7427ebcc67fea4e2b9411','5efd43e8852b42cfb1844afe2e13ed01','3939f148beeb44ae8249c704e9d8837c','f5de6d4171e842738ccca927addb7dc1','61bd17ec5502459d81659f3737711cc1']
 
 
 
