@@ -682,10 +682,10 @@ function hdid(i) {
                     if ($.hdid.resultCode == 1) {
                         spid[i] = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 9)
                         zbid[i] = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 10)
-						hbyid[i] = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 11)
+						//hbyid[i] = $.hdid.data.everyDayActivityList.find(item => item.actTypeId === 11)
                         console.log('【' + spid[i].actName + 'ID】：' + spid[i].actId)
                         console.log('【' + zbid[i].actName + 'ID】：' + zbid[i].actId) ;
-						console.log('【' + hbyid[i].actName + 'ID】：' + hbyid[i].actId) ;
+						//console.log('【' + hbyid[i].actName + 'ID】：' + hbyid[i].actId) ;
 						
                     }
                 } catch (e) {
@@ -831,7 +831,8 @@ function video(i) {
                     console.log(`【视频奖励】${$.name+(i+1)}开始领取视频奖励，获得${$.video.data.goldCoinNumber}金币`);                      
                 }
 				if ($.video.resultCode == 0) {
-					console.log('【视频奖励】⚠️' + $.video.errorDesc + '\n');								
+					//console.log('【视频奖励】⚠️' + $.video.errorDesc + '\n');	
+					console.log(`【视频奖励】${$.name+(i+1)}达到上限`);						
 				}
 				if ($.video.data && $.video.data.goldCoinNumber == 0) {
 					console.log(`【视频奖励】${$.name+(i+1)}已灰，已无法获取视频奖励`);					
