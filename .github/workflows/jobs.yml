@@ -1,4 +1,4 @@
-name: 综合任务
+name: 机场&书旗
 on:
   workflow_dispatch:
   watch:
