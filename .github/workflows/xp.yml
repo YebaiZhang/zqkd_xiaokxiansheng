@@ -27,3 +27,7 @@ jobs:
         run: |
           cd ~/js   
           node Task/iboxpays.js
+      - name: '【多看点】'
+        run: |
+          cd ~/js   
+          node Task/duokandian.js
