@@ -1,0 +1,22 @@
+{
+    "id": "cxk.app.sub",
+    "name": "蔡徐坤 脚本订阅",
+    "author": "@caixukun1",
+    "apps": [
+	    {
+            "id":"ymz",
+            "name":"羊毛赚",
+            "keys":[
+                "loginbodys"
+            ],
+            "author":"@caixukun1",
+          
+            "repo":"https://raw.githubusercontent.com/",
+            "icons":[
+                "https://s3.ax1x.com/2021/02/06/yYzYWR.png",
+                "https://s3.ax1x.com/2021/02/06/yYzYWR.png"
+            ],
+            "script":"https://raw.githubusercontent.com/"
+        }
+    ]
+}
