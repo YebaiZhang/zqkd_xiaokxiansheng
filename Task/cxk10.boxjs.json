@@ -23,8 +23,12 @@
             "id":"sqxh",
             "name":"书旗小说",
             "keys":[
-                "loginbodys1",
-				"currentidfa1"
+                "readck",
+				"receivecoinck",
+				"watchvedioprizeck",
+				"getvideorewardck",
+				"drawck",
+				"userinfock"
             ],
             "author":"@caixukun1",
 			"settings": [{
