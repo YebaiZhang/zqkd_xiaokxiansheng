@@ -25,8 +25,8 @@
             "keys":[
                 "readck",
 				"receivecoinck",
-				"watchvedioprizeck",
-				"getvideorewardck",
+				"vediogoldprizeck",
+				"vediodrawprizeck",
 				"drawck",
 				"userinfock"
             ],
