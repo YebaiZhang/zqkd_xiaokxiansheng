@@ -7,8 +7,10 @@
             "id":"ymz",
             "name":"羊毛赚",
             "keys":[
-                "loginbodys",
-				"currentidfa"
+                "requestbodys",
+				"idfas",
+				"currentidfa",
+				"Nickname"
             ],
             "author":"@caixukun1",
           
