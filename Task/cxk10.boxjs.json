@@ -7,7 +7,7 @@
             "id":"ymz",
             "name":"羊毛赚",
             "keys":[
-                "requestbodys",
+                "responsebodys",
 				"idfas",
 				"currentidfa",
 				"Nickname"
