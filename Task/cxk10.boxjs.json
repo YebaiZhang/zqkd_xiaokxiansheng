@@ -30,7 +30,7 @@
                     "name": "设置登录账号",
                     "val": "0",
                     "type": "number",
-                    "desc": "输入羊毛赚8位用户id"
+                    "desc": "输入羊毛赚8位用户id，0表示不用boxjs登录"
                 }
             ],
             "repo":"https://raw.githubusercontent.com/",
