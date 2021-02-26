@@ -220,14 +220,12 @@ iboxpayheaderArr =
         'Accept-Language': `zh-Hans;q=1, en;q=0.9`,
         'Accept': `*/*`
     }
-]
+];
 
-Length = iboxpayheaderArr.length
-
-    refreshTokenID = ['5f50e70aa7254bd2993f7bc6bb808741', '865097655e614645998c715659dd5bdb', '7b79386a555e47bab4f89fc422bb2e31', 'b1132b0904a5431d92366600fa328a5f', 'ba516fbec37d409ab78dc8c13fe75bdb', 'bfc3e0a1c49843e8916903d96f038b95', '2b071e135d9149049d395598669c0552', '121f8fcae1e7427ebcc67fea4e2b9411', '5efd43e8852b42cfb1844afe2e13ed01', '3939f148beeb44ae8249c704e9d8837c', 'f5de6d4171e842738ccca927addb7dc1', '61bd17ec5502459d81659f3737711cc1']
-
-    console.log(
-        `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
+refreshTokenID = ['5f50e70aa7254bd2993f7bc6bb808741', '865097655e614645998c715659dd5bdb', '7b79386a555e47bab4f89fc422bb2e31', 'b1132b0904a5431d92366600fa328a5f', 'ba516fbec37d409ab78dc8c13fe75bdb', 'bfc3e0a1c49843e8916903d96f038b95', '2b071e135d9149049d395598669c0552', '121f8fcae1e7427ebcc67fea4e2b9411', '5efd43e8852b42cfb1844afe2e13ed01', '3939f148beeb44ae8249c704e9d8837c', 'f5de6d4171e842738ccca927addb7dc1', '61bd17ec5502459d81659f3737711cc1'];
+Length = iboxpayheaderArr.length;
+console.log(
+    `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
     new Date().getTime() +
     new Date().getTimezoneOffset() * 60 * 1000 +
     8 * 60 * 60 * 1000
@@ -474,15 +472,17 @@ function refreshtoken(i) {
         token = iboxpayheaderVal["token"];
         oldtime = traceid.substr(traceid.indexOf("161"), 13);
         O = (`${$.name + (i + 1)}🔔`);
-        header = JSON.stringify(iboxpayheaderVal).replace(`${oldtime}`, `${tts()}`)
-            refreshtokenbodyVal = `{"refreshToken11":"${refreshtokenVal}","source":"VEISHOP_APP_IOS"}`
-            let url = {
+        header = JSON.stringify(iboxpayheaderVal).replace(`${oldtime}`, `${tts()}`);
+        refreshtokenbodyVal = `{"refreshToken":"${refreshtokenVal}","source":"VEISHOP_APP_IOS"}`;
+
+        let url = {
             url: `https://veishop.iboxpay.com/nf_gateway/nf_user_auth_web/uc/ignore_tk/v1/refresh_access_token_to_c.json`,
             headers: JSON.parse(header),
             body: refreshtokenbodyVal,
-        }
+        };
         $.post(url, async(err, resp, data) => {
             try {
+
                 if (logs)
                     $.log(`${O}, TOKEN更新🚩: ${data}`);
                 $.refreshtoken = JSON.parse(data);
@@ -495,7 +495,7 @@ function refreshtoken(i) {
                 $.logErr(e, resp);
             }
             finally {
-                resolve()
+                resolve();
             }
         })
     })
@@ -503,7 +503,7 @@ function refreshtoken(i) {
 //用户名
 function user(i) {
     return new Promise((resolve) => {
-        //     setTimeout(() => {
+
         iboxpayheaderVal = iboxpayheaderArr[i];
         refreshtokenVal = refreshTokenID[i];
         traceid = iboxpayheaderVal["traceid"];
@@ -540,7 +540,7 @@ function user(i) {
                 resolve()
             }
         })
-        //    }, timeout)
+
     })
 }
 //金币信息
@@ -831,14 +831,8 @@ function singlelive(i) {
         token = iboxpayheaderVal["token"];
         oldtime = traceid.substr(traceid.indexOf("161"), 13);
         O = (`${$.name + (i + 1)}🔔`);
-        header = JSON.stringify(iboxpayheaderVal).replace(`${token}`, `${TOKEN[i]}`).replace(`${oldtime}`, `${tts()}`)
-            livesbodyVal = `{
-                                                                                                                                        "actId": "${zbid[0].actId}",
-                                                                                                                                        "liveId": "${liveId[0][` $ {
-            IDNum
-        }
-        `]}"
-   }`
+        header = JSON.stringify(iboxpayheaderVal).replace(`${token}`, `${TOKEN[i]}`).replace(`${oldtime}`, `${tts()}`);
+        livesbodyVal = `{"actId": "${zbid[0].actId}","liveId": "${liveId[0][`${IDNum}`]}"}`;
 
         let url = {
             url: `https://veishop.iboxpay.com/nf_gateway/nf_customer_activity/day_cash/v1/give_redbag_by_live.json`,
@@ -854,18 +848,11 @@ function singlelive(i) {
 
                 if ($.lives.resultCode == 1) {
 
-                    console.log(`【直播奖励】${$.name+(i+1)}开始领取第${parseInt(` $ {
-                        IDNum
-                    }
-`)+1}次直播奖励，获得${$.lives.data.goldCoinAmt}金币,等待30秒继续`);
-
+                    console.log(`【直播奖励】${$.name+(i+1)}领取第${parseInt(`${IDNum}`)+1}次直播奖励，获得${$.lives.data.goldCoinAmt}金币,等待30秒继续`);
                 }
                 if ($.lives.resultCode == 0) {
 
-                    console.log(`【直播奖励】${$.name+(i+1)}开始领取第${parseInt(` $ {
-                        IDNum
-                    }
-`)+1}次直播奖励，${$.lives.errorDesc},等待30秒继续`);
+                    console.log(`【直播奖励】${$.name+(i+1)}领取第${parseInt(`${IDNum}`)+1}次直播奖励，${$.lives.errorDesc},等待30秒继续`);
 
                 }
             } catch (e) {
