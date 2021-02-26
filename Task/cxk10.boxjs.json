@@ -7,22 +7,7 @@
             "id":"ymz",
             "name":"羊毛赚",
             "keys":[
-                "UserID1",
-				"UserID2",
-				"UserID3",
-				"UserID4",
-				"UserID5",
-				"watchadck1",
-				"watchvediock1",
-				"watchadck2",
-				"watchvediock2",
-				"watchadck3",
-				"watchvediock3",
-				"watchadck4",
-				"watchvediock4",
-				"watchadck5",
-				"watchvediock5"
-				
+                "UserIDs",
             ],
             "author":"@caixukun1",
           	"settings": [{
