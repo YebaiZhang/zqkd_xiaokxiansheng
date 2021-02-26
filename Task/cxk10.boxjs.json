@@ -7,10 +7,11 @@
             "id":"ymz",
             "name":"羊毛赚",
             "keys":[
-                "responsebodys",
-				"idfas",
-				"currentidfa",
-				"Nickname",
+                "UserID1",
+				"UserID2",
+				"UserID3",
+				"UserID4",
+				"UserID5",
 				"watchadck1",
 				"watchvediock1",
 				"watchadck2",
@@ -26,17 +27,10 @@
             "author":"@caixukun1",
           	"settings": [{
                     "id": "ymz",
-                    "name": "当前账号",
-                    "val": "1",
+                    "name": "设置登录账号",
+                    "val": "0",
                     "type": "number",
-                    "desc": "当前抓取ck记录的账号序号，如：1、2、4、"
-                },
-                {
-                    "id": "ymzCountNumber",
-                    "name": "账号个数",
-                    "val": "1",
-                    "type": "number",
-                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                    "desc": "输入羊毛赚8位用户id"
                 }
             ],
             "repo":"https://raw.githubusercontent.com/",
