@@ -1,4 +1,4 @@
-name: 笑谱&多看点
+name: 笑谱
 
 on:
   workflow_dispatch:
@@ -27,7 +27,4 @@ jobs:
         run: |
           cd ~/js   
           node Task/iboxpays.js
-      - name: '【多看点】'
-        run: |
-          cd ~/js   
-          node Task/duokandian.js
+
